@@ -18,6 +18,7 @@ public class activity_crop extends AppCompatActivity {
 
     public static Bitmap bitmap;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
