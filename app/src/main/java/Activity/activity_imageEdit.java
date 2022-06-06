@@ -2,6 +2,7 @@ package Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -62,7 +63,7 @@ public class activity_imageEdit extends AppCompatActivity {
 
         }
 
-        RecyclerView.LayoutManager manager = new GridLayoutManager(activity_imageEdit.this,13,GridLayoutManager.VERTICAL,false);
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(activity_imageEdit.this,LinearLayoutManager.HORIZONTAL,false);
         Adapter3D adapter3D = new Adapter3D(activity_imageEdit.this,model3D);
         menu_3d.setAdapter(adapter3D);
         menu_3d.setLayoutManager(manager);

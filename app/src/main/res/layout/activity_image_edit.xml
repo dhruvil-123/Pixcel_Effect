@@ -72,10 +72,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/menu_3d"
-            tools:listitem="@layout/menu_3d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal"
+            tools:listitem="@layout/menu_3d" />
 
     </LinearLayout>
 

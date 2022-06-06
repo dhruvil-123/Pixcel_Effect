@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         app:tint="@color/white"
         tools:ignore="MissingConstraints" />
 
