@@ -58,10 +58,20 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
+
         <ImageView
             android:id="@+id/croped_image"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/front_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            app:tint="@color/white" />
 
     </FrameLayout>
 
@@ -71,13 +81,32 @@
         android:background="#494949">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
             android:id="@+id/menu_3d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:listitem="@layout/menu_3d" />
+            android:orientation="horizontal" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#494949">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menu_effect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="DuplicateIds" />
+
+    </LinearLayout>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id=""-->
+<!--        android:layout_width="match_    parent"-->
+<!--        android:layout_height="wrap_content"/>-->
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -92,7 +121,7 @@
             android:padding="@dimen/_5sdp">
 
             <LinearLayout
-                android:id="@+id/icon_3d"
+                android:id="@id/icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
@@ -115,6 +144,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/icon_effect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"

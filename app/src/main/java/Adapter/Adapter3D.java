@@ -1,5 +1,6 @@
 package Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,9 +38,19 @@ public class Adapter3D extends RecyclerView.Adapter<Adapter3D.Holder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, int position) {
+    public void onBindViewHolder(@NonNull Holder holder, @SuppressLint( "RecyclerView" ) int position) {
 
+//        holder.back_img.setImageBitmap(activity_imageEdit.croped_image);
         holder.icon.setImageResource(model3D.get(position));
+
+        holder.icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                activity_imageEdit.front_img.setImageResource(model3D.get(position));
+
+            }
+        });
 
     }
 
@@ -51,11 +62,14 @@ public class Adapter3D extends RecyclerView.Adapter<Adapter3D.Holder>{
     class Holder extends RecyclerView.ViewHolder {
 
         ImageView icon;
+        ImageView back_img;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
 
             icon = itemView.findViewById(R.id.icon);
+            back_img = itemView.findViewById(R.id.back_img);
+
 
         }
     }

@@ -4,18 +4,18 @@ import com.dhruvil.pixcel_effect.R;
 
 public class utils {
 
-    public static int icon[] = {R.drawable.pixel_01
-    ,R.drawable.pixel_2
-    ,R.drawable.pixel_02
-    ,R.drawable.pixel_3
-    ,R.drawable.pixel_03
-    ,R.drawable.pixel_4
-    ,R.drawable.pixel_04
-    ,R.drawable.pixel_05
-    ,R.drawable.pixel_6
-    ,R.drawable.pixel_06
-    ,R.drawable.pixel_7
-    ,R.drawable.pixel_8
-    ,R.drawable.pixel_9};
+    public static int icon[] = {R.drawable.bg_3d_1_black
+    ,R.drawable.bg_3d_3_black
+    ,R.drawable.bg_3d_4_black
+    ,R.drawable.bg_3d_5_black
+    ,R.drawable.bg_3d_6_black
+    ,R.drawable.pixel_mask_1
+    ,R.drawable.pixel_mask_2
+    ,R.drawable.splash_01
+    ,R.drawable.splash_02
+    ,R.drawable.splash_03
+    ,R.drawable.splash_04
+    ,R.drawable.splash_05
+    ,R.drawable.splash_06};
 
 }
