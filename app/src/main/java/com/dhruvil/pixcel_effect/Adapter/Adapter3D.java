@@ -1,4 +1,4 @@
-package Adapter;
+package com.dhruvil.pixcel_effect.Adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -10,11 +10,12 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dhruvil.pixcel_effect.Activity.Activity_crop;
 import com.dhruvil.pixcel_effect.R;
 
 import java.util.List;
 
-import Activity.activity_imageEdit;
+import com.dhruvil.pixcel_effect.Activity.activity_imageEdit;
 
 public class Adapter3D extends RecyclerView.Adapter<Adapter3D.Holder>{
 
@@ -40,7 +41,7 @@ public class Adapter3D extends RecyclerView.Adapter<Adapter3D.Holder>{
     @Override
     public void onBindViewHolder(@NonNull Holder holder, @SuppressLint( "RecyclerView" ) int position) {
 
-//        holder.back_img.setImageBitmap(activity_imageEdit.croped_image);
+        holder.back_img.setImageBitmap(Activity_crop.bitmap);
         holder.icon.setImageResource(model3D.get(position));
 
         holder.icon.setOnClickListener(new View.OnClickListener() {

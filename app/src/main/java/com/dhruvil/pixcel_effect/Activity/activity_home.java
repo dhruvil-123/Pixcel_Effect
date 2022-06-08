@@ -1,4 +1,4 @@
-package Activity;
+package com.dhruvil.pixcel_effect.Activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,7 +62,6 @@ public class activity_home extends AppCompatActivity {
 
     }
 
-
     public void btn_start(View view) {
 
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -80,7 +79,7 @@ public class activity_home extends AppCompatActivity {
 
                 uri = data.getData();
 
-                Intent intent1 = new Intent(activity_home.this, activity_crop.class);
+                Intent intent1 = new Intent(activity_home.this, Activity_crop.class);
                 startActivity(intent1);
 
             }

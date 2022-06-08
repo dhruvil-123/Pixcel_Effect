@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="Activity.activity_imageEdit">
+    tools:context="com.dhruvil.pixcel_effect.Activity.activity_imageEdit">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

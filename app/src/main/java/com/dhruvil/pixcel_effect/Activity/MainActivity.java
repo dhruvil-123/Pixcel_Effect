@@ -1,4 +1,4 @@
-package Activity;
+package com.dhruvil.pixcel_effect.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

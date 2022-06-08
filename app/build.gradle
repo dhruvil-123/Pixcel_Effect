@@ -47,4 +47,9 @@ dependencies {
 //    implementation 'com.github.yalantis:ucrop:1.0.6'
 //    implementation 'com.github.yalantis:ucrop:1.0.6-native'
     implementation 'com.github.CanHub:Android-Image-Cropper:4.2.1'
+
+    implementation 'com.github.QuadFlask:colorpicker:0.0.15'
 }
+
+
+

@@ -1,4 +1,4 @@
-package Activity;
+package com.dhruvil.pixcel_effect.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.canhub.cropper.CropImageView;
 import com.dhruvil.pixcel_effect.R;
 
-public class activity_crop extends AppCompatActivity {
+public class Activity_crop extends AppCompatActivity {
 
     CropImageView open_img;
     ImageView save;
@@ -35,7 +35,7 @@ public class activity_crop extends AppCompatActivity {
             public void onClick(View view) {
 
                 bitmap = open_img.getCroppedImage();
-                startActivity(new Intent(activity_crop.this,activity_imageEdit.class));
+                startActivity(new Intent(Activity_crop.this,activity_imageEdit.class));
 
             }
         });
