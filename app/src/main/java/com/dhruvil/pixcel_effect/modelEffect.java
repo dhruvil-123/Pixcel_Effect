@@ -1,4 +1,4 @@
-package Model;
+package com.dhruvil.pixcel_effect;
 
 public class modelEffect {
 

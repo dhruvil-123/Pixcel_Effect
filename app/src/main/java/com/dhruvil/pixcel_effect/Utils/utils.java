@@ -1,4 +1,4 @@
-package Utils;
+package com.dhruvil.pixcel_effect.Utils;
 
 import com.dhruvil.pixcel_effect.R;
 
