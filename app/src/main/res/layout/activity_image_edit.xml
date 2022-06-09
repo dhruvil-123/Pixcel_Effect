@@ -76,6 +76,7 @@
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/line_3d"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#494949">

@@ -1,11 +1,16 @@
 package com.dhruvil.pixcel_effect.Activity;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,10 +19,13 @@ import android.widget.Toast;
 
 import com.dhruvil.pixcel_effect.R;
 
+import java.net.URI;
+
 public class activity_home extends AppCompatActivity {
 
     public static Uri uri;
-    ImageView btnmenu;
+    ImageView btnmenu,btn_start;
+    String permission[] = {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,7 @@ public class activity_home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         btnmenu = findViewById(R.id.btnmenu);
+        btn_start = findViewById(R.id.btn_start);
 
         btnmenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,11 +69,29 @@ public class activity_home extends AppCompatActivity {
             }
         });
 
+        btn_start.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi( api = Build.VERSION_CODES.M )
+            @Override
+            public void onClick(View view) {
+
+                if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+
+                    requestPermissions(permission,1001);
+
+                }else{
+
+                    btn_start(view);
+
+                }
+
+            }
+        });
+
     }
 
     public void btn_start(View view) {
 
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/*");
         startActivityForResult(intent, 1001);
 

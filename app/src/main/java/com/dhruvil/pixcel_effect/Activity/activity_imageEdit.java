@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -31,7 +33,9 @@ public class activity_imageEdit extends AppCompatActivity {
     public static ImageView croped_image,front_img;
     ImageView back;
     RecyclerView menu_3d,menu_effect;
-    LinearLayout icon_3d,icon_effect,color_pick;
+    LinearLayout icon_3d,icon_effect,color_pick,line_3d;
+
+    int check = 0;
 
     List<Integer> model3D = new ArrayList<>();
     List<Integer> modelEffect = new ArrayList<>();
@@ -60,7 +64,8 @@ public class activity_imageEdit extends AppCompatActivity {
                         .setPositiveButton("ok", new ColorPickerClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
-                                back.setColorFilter(selectedColor);
+                                front_img.setColorFilter(selectedColor);
+                                front_img.setImageAlpha(100);
                             }
                         })
                         .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -86,7 +91,19 @@ public class activity_imageEdit extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                menu_3d.setVisibility(View.VISIBLE);
+                if(check == 0) {
+                    menu_3d.setVisibility(View.VISIBLE);
+                    menu_effect.setVisibility(View.GONE);
+
+//                    Animation animation = AnimationUtils.loadAnimation(activity_imageEdit.this,R.anim.up);
+//                    line_3d.startAnimation(animation);
+
+                    check=1;
+                }else if(check == 1){
+                    menu_3d.setVisibility(View.GONE);
+                    menu_effect.setVisibility(View.GONE);
+                    check=0;
+                }
 
             }
         });
@@ -95,7 +112,15 @@ public class activity_imageEdit extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                menu_effect.setVisibility(View.VISIBLE);
+                if(check == 0) {
+                    menu_effect.setVisibility(View.VISIBLE);
+                    menu_3d.setVisibility(View.GONE);
+                    check=1;
+                }else if(check == 1){
+                    menu_effect.setVisibility(View.GONE);
+                    menu_3d.setVisibility(View.GONE);
+                    check=0;
+                }
 
             }
         });
@@ -136,5 +161,6 @@ public class activity_imageEdit extends AppCompatActivity {
         menu_effect = findViewById(R.id.menu_effect);
         icon_effect = findViewById(R.id.icon_effect);
         color_pick = findViewById(R.id.color_pick);
+        line_3d = findViewById(R.id.line_3d);
     }
 }
