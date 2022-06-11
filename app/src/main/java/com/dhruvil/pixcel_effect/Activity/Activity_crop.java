@@ -27,7 +27,7 @@ public class Activity_crop extends AppCompatActivity {
         open_img = findViewById(R.id.open_img);
         save = findViewById(R.id.save);
 
-        open_img.setImageUriAsync(activity_home.uri);
+        open_img.setImageUriAsync(Activity_home.uri);
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +35,7 @@ public class Activity_crop extends AppCompatActivity {
             public void onClick(View view) {
 
                 bitmap = open_img.getCroppedImage();
-                startActivity(new Intent(Activity_crop.this,activity_imageEdit.class));
+                startActivity(new Intent(Activity_crop.this, Activity_imageEdit.class));
 
             }
         });

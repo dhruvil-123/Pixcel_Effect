@@ -15,14 +15,14 @@ import com.dhruvil.pixcel_effect.R;
 
 import java.util.List;
 
-import com.dhruvil.pixcel_effect.Activity.activity_imageEdit;
+import com.dhruvil.pixcel_effect.Activity.Activity_imageEdit;
 
 public class AdapterEffect extends RecyclerView.Adapter<AdapterEffect.EffectHolder>{
 
     Activity activity;
     List<Integer> modelEffect;
 
-    public AdapterEffect(activity_imageEdit activity_imageEdit, List<Integer> modelEffect) {
+    public AdapterEffect(Activity_imageEdit activity_imageEdit, List<Integer> modelEffect) {
 
         activity = activity_imageEdit;
         this.modelEffect = modelEffect;
@@ -48,7 +48,7 @@ public class AdapterEffect extends RecyclerView.Adapter<AdapterEffect.EffectHold
             @Override
             public void onClick(View view) {
 
-                activity_imageEdit.front_img.setImageResource(modelEffect.get(position));
+                Activity_imageEdit.front_img.setImageResource(modelEffect.get(position));
 
             }
         });

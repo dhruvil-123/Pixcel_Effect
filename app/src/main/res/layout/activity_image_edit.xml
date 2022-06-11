@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dhruvil.pixcel_effect.Activity.activity_imageEdit">
+    tools:context="com.dhruvil.pixcel_effect.Activity.Activity_imageEdit">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -26,13 +26,13 @@
             android:textSize="@dimen/_18sdp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/save"
             app:layout_constraintStart_toEndOf="@+id/back"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.513" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
@@ -63,6 +63,7 @@
             android:id="@+id/croped_image"
             android:layout_width="match_parent"
             android:layout_gravity="center"
+            android:scaleType="fitXY"
             android:layout_height="match_parent" />
 
         <ImageView
@@ -101,6 +102,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="gone"
+            tools:ignore="DuplicateIds" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#494949">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menu_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
             tools:ignore="DuplicateIds" />
 
     </LinearLayout>
@@ -212,6 +228,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/icon_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
@@ -286,7 +303,7 @@
                 <ImageView
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
-                    android:src="@mipmap/ic_flip"
+                    android:src="@mipmap/ic_rotate"
                     app:tint="@color/white" />
 
                 <TextView

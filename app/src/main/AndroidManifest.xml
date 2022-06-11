@@ -18,13 +18,13 @@
         android:theme="@style/Theme.Pixcel_effect"
         tools:targetApi="31" >
         <activity
-            android:name="com.dhruvil.pixcel_effect.Activity.activity_imageEdit"
+            android:name="com.dhruvil.pixcel_effect.Activity.Activity_imageEdit"
             android:exported="false" />
         <activity
             android:name="com.dhruvil.pixcel_effect.Activity.Activity_crop"
             android:exported="false" />
         <activity
-            android:name="com.dhruvil.pixcel_effect.Activity.activity_home"
+            android:name="com.dhruvil.pixcel_effect.Activity.Activity_home"
             android:exported="false" />
         <activity
             android:name="com.dhruvil.pixcel_effect.Activity.MainActivity"

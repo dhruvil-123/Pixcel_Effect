@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dhruvil.pixcel_effect.Activity.activity_home">
+    tools:context="com.dhruvil.pixcel_effect.Activity.Activity_home">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -110,7 +110,8 @@
             android:text="MORE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btn_more" />
+            app:layout_constraintStart_toStartOf="@+id/btn_more"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

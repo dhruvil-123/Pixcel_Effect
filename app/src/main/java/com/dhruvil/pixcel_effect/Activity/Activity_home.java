@@ -19,9 +19,7 @@ import android.widget.Toast;
 
 import com.dhruvil.pixcel_effect.R;
 
-import java.net.URI;
-
-public class activity_home extends AppCompatActivity {
+public class Activity_home extends AppCompatActivity {
 
     public static Uri uri;
     ImageView btnmenu,btn_start;
@@ -39,7 +37,7 @@ public class activity_home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                PopupMenu menu = new PopupMenu(activity_home.this, btnmenu);
+                PopupMenu menu = new PopupMenu(Activity_home.this, btnmenu);
                 menu.getMenuInflater().inflate(R.menu.home_menu, menu.getMenu());
                 menu.show();
 
@@ -50,7 +48,8 @@ public class activity_home extends AppCompatActivity {
                         switch (menuItem.getItemId()) {
 
                             case R.id.rateus:
-                                Toast.makeText(activity_home.this, "Please Rate Us", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_home.this, "Please Rate Us", Toast.LENGTH_SHORT).show();
+                                break;
 
                             case R.id.share:
                                 Intent intent = new Intent(Intent.ACTION_SEND);
@@ -60,6 +59,7 @@ public class activity_home extends AppCompatActivity {
                                 shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=photovideozone.pixeleffect&hl=en" + "\n\n";
                                 intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                                 startActivity(Intent.createChooser(intent, "Choose One"));
+                                break;
                         }
 
                         return false;
@@ -106,7 +106,7 @@ public class activity_home extends AppCompatActivity {
 
                 uri = data.getData();
 
-                Intent intent1 = new Intent(activity_home.this, Activity_crop.class);
+                Intent intent1 = new Intent(Activity_home.this, Activity_crop.class);
                 startActivity(intent1);
 
             }
