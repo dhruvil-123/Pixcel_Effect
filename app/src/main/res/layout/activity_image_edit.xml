@@ -36,6 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
+            android:background="@drawable/ripple"
+            android:clickable="true"
             android:src="@drawable/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:background="@drawable/ripple"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -58,13 +62,19 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-
-        <ImageView
+        <com.jsibbold.zoomage.ZoomageView
             android:id="@+id/croped_image"
             android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:zoomage_animateOnReset="true"
+            app:zoomage_autoCenter="true"
+            app:zoomage_autoResetMode="UNDER"
+            app:zoomage_maxScale="8"
+            app:zoomage_minScale="0.6"
+            app:zoomage_restrictBounds="false"
+            app:zoomage_translatable="true"
+            app:zoomage_zoomable="true" />
+
 
         <ImageView
             android:id="@+id/front_img"
@@ -83,15 +93,16 @@
         android:background="#494949">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
             android:id="@+id/menu_3d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            android:visibility="gone" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lineEffect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#494949">
@@ -107,12 +118,29 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lineFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#494949">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/menu_filter"
+            android:id="@+id/menuFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:ignore="DuplicateIds" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineGlare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#494949">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuGlare"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -121,10 +149,10 @@
 
     </LinearLayout>
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id=""-->
-<!--        android:layout_width="match_    parent"-->
-<!--        android:layout_height="wrap_content"/>-->
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id=""-->
+    <!--        android:layout_width="match_    parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -144,6 +172,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -167,6 +197,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -190,6 +222,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -207,10 +241,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/iconGlare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -233,6 +270,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -250,10 +289,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/textDialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -272,10 +314,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/iconSticker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -294,10 +339,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/icon_rotate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -316,10 +364,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/icon_flip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
                 android:orientation="vertical">
 
                 <ImageView

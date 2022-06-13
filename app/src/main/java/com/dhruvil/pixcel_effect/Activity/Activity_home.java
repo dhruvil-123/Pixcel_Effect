@@ -106,7 +106,7 @@ public class Activity_home extends AppCompatActivity {
 
                 uri = data.getData();
 
-                Intent intent1 = new Intent(Activity_home.this, Activity_crop.class);
+                Intent intent1 = new Intent(Activity_home.this, ActivityCrop.class);
                 startActivity(intent1);
 
             }

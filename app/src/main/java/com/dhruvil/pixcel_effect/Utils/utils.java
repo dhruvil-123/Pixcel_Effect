@@ -54,4 +54,13 @@ public class utils {
             ,R.drawable.pixel_34
     };
 
+    public static int[] glare = {
+            R.drawable.flare_01
+            ,R.drawable.flare_02
+            ,R.drawable.flare_03
+            ,R.drawable.flare_04
+            ,R.drawable.flare_05
+            ,R.drawable.flare_06
+    };
+
 }

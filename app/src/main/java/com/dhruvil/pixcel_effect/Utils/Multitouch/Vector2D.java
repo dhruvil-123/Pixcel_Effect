@@ -1,4 +1,4 @@
-package com.dhruvil.pixcel_effect.Multitouch;
+package com.dhruvil.pixcel_effect.Utils.Multitouch;
 
 import android.graphics.PointF;
 

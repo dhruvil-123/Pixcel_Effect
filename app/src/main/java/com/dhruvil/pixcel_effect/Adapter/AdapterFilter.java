@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dhruvil.pixcel_effect.Activity.Activity_crop;
+import com.dhruvil.pixcel_effect.Activity.ActivityCrop;
 import com.dhruvil.pixcel_effect.Activity.Activity_imageEdit;
 import com.dhruvil.pixcel_effect.Effects;
 import com.dhruvil.pixcel_effect.R;
@@ -35,7 +35,7 @@ public class AdapterFilter extends RecyclerView.Adapter<AdapterFilter.EffectHold
     @Override
     public void onBindViewHolder(@NonNull EffectHolder holder, @SuppressLint( "RecyclerView" ) int position) {
 
-        holder.icon_filter.setImageBitmap(Activity_crop.bitmap);
+        holder.icon_filter.setImageBitmap(ActivityCrop.bitmap);
 
         switch (position) {
 

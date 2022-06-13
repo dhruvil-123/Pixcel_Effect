@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dhruvil.pixcel_effect.Activity.Activity_crop">
+    tools:context="com.dhruvil.pixcel_effect.Activity.ActivityCrop">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -57,7 +57,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/logo" />
+            app:srcCompat="@mipmap/logo"
+            app:cropMaxCropResultHeightPX="6000"
+            app:cropMaxCropResultWidthPX="6000"
+            android:minHeight="@dimen/_600sdp"
+            android:minWidth="@dimen/_600sdp"
+            app:cropMinCropWindowHeight="@dimen/_100sdp"
+            app:cropMinCropWindowWidth="@dimen/_100sdp"/>
 
     </RelativeLayout>
 

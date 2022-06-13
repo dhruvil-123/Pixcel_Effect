@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dhruvil.pixcel_effect.Multitouch;
+package com.dhruvil.pixcel_effect.Utils.Multitouch;
 
 import android.util.Log;
 import android.view.MotionEvent;

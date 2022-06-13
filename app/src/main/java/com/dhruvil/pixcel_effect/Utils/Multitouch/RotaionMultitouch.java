@@ -1,11 +1,11 @@
-package com.dhruvil.pixcel_effect.Multitouch;
+package com.dhruvil.pixcel_effect.Utils.Multitouch;
 
 import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
-public class MultiTouchListener implements OnTouchListener {
+public class RotaionMultitouch implements OnTouchListener {
 
     private static final int INVALID_POINTER_ID = -1;
     public boolean isRotateEnabled = true;
@@ -20,15 +20,14 @@ public class MultiTouchListener implements OnTouchListener {
     private ScaleGestureDetector mScaleGestureDetector;
     OnRotateListner rotateListner;
 
-    public MultiTouchListener(boolean isRotateEnabled, boolean isTranslateEnabled, boolean isScaleEnabled) {
+    public RotaionMultitouch(boolean isRotateEnabled, boolean isTranslateEnabled, boolean isScaleEnabled) {
         this.isRotateEnabled = isRotateEnabled;
         this.isScaleEnabled = isScaleEnabled;
         this.isTranslateEnabled = isTranslateEnabled;
         mScaleGestureDetector = new ScaleGestureDetector(new ScaleGestureListener());
 
     }
-
-    public MultiTouchListener(boolean isRotateEnabled, boolean isTranslateEnabled, boolean isScaleEnabled, OnRotateListner rotateListner) {
+    public RotaionMultitouch(boolean isRotateEnabled, boolean isTranslateEnabled, boolean isScaleEnabled, OnRotateListner rotateListner) {
         this.isRotateEnabled = isRotateEnabled;
         this.isScaleEnabled = isScaleEnabled;
         this.isTranslateEnabled = isTranslateEnabled;
@@ -38,11 +37,12 @@ public class MultiTouchListener implements OnTouchListener {
     }
 
 
-    public MultiTouchListener() {
+
+    public RotaionMultitouch() {
         mScaleGestureDetector = new ScaleGestureDetector(new ScaleGestureListener());
     }
 
-    private static float adjustAngle(float degrees) {
+    public static float adjustAngle(float degrees) {
         if (degrees > 180.0f) {
             degrees -= 360.0f;
         } else if (degrees < -180.0f) {
@@ -52,7 +52,7 @@ public class MultiTouchListener implements OnTouchListener {
         return degrees;
     }
 
-    private void move(View view, TransformInfo info) {
+    private  void move(View view, TransformInfo info) {
         computeRenderOffset(view, info.pivotX, info.pivotY);
         adjustTranslation(view, info.deltaX, info.deltaY);
 
@@ -63,7 +63,8 @@ public class MultiTouchListener implements OnTouchListener {
         view.setScaleY(scale);
 
         float rotation = adjustAngle(view.getRotation() + info.deltaAngle);
-        view.setRotation(rotation);
+        rotateListner.getRotation(adjustAngle(view.getRotation() + info.deltaAngle));
+      //  view.setRotation(rotation);
     }
 
     private static void adjustTranslation(View view, float deltaX, float deltaY) {
@@ -121,7 +122,7 @@ public class MultiTouchListener implements OnTouchListener {
                 if (pointerIndex != -1) {
                     float currX = event.getX(pointerIndex);
                     float currY = event.getY(pointerIndex);
-                  //  Log.i("Test:  x=",currX+" y="+currY);
+                    //Log.i("Test:  x=",currX+" y="+currY);
                     // Only move if the ScaleGestureDetector isn't processing a
                     // gesture.
                     if (!mScaleGestureDetector.isInProgress()) {
@@ -201,8 +202,7 @@ public class MultiTouchListener implements OnTouchListener {
         public float minimumScale;
         public float maximumScale;
     }
-
-    public interface OnRotateListner {
+    public  interface  OnRotateListner {
         public float getRotation(float rotation);
     }
 }
